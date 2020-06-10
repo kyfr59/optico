@@ -10,6 +10,8 @@ License:     GPL2
 */
 
 
+// Inclus les scripts JS & CSS
+add_action( 'wp_footer', 'optico_load_optico_script_in_footer' );
 function optico_load_optico_script_in_footer() {
 
   // Inclusion du code Optico
@@ -30,7 +32,40 @@ function optico_load_optico_script_in_footer() {
     echo file_get_contents($file_css);
   }
 }
-add_action( 'wp_footer', 'optico_load_optico_script_in_footer' );
+
+
+// Crée la zone "Numéro d'origine"
+add_action( 'admin_init', 'optico_create_numero_metabox' );
+function optico_create_numero_metabox() {
+  add_meta_box( 'optico_numero_metabox', 'Numéro de téléphone d\'origine', 'optico_display_numero_metabox', ['page', 'post'], 'side', 'low');
+}
+
+
+// Affiche la zone "Numéro d'origine"
+function optico_display_numero_metabox() {
+
+  global $post;
+  $numero_optico = get_post_meta($post->ID, 'numero_optico', true);
+  echo '<p>Pour être remplacé par Optico, le numéro doit compoter 10 chiffres sans espaces.</p>';
+  echo '<input type="text" name="numero_optico" value="'.$numero_optico.'" />';
+}
+
+
+// Gère la sauvegarde du numéro d'origine
+add_action( 'save_post', 'optico_save_numero');
+function optico_save_numero() {
+
+  global $post;
+  global $wpdb;
+
+  $numero_optico = $_POST['numero_optico'];
+
+  if (metadata_exists( 'post', $post->ID, 'numero_optico' ) ) {
+    update_post_meta($post->ID, 'numero_optico', $numero_optico);
+  } else {
+    add_post_meta( $post->ID, 'numero_optico', $numero_optico );
+  }
+}
 
 /*
 
