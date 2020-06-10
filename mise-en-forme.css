@@ -1,0 +1,102 @@
+<style>
+
+/**
+ *
+ * Code CSS de la version desktop
+ *
+ */
+
+/* <div> qui enveloppe chaque zone Optico (bordure bleue) */
+div.optico {
+  border: 0px solid blue; /* Pour afficher la bordure passer à 1px */
+  height: 50px; /* Doit correspondre à la largeur de l'image cartouche.png */
+  width: 415px; /* Doit correspondre à la hauteur de l'image cartouche.png */
+  font-weight: bold; /* Réglage possible */
+  font-size: 20px; /* Réglage possible */
+  color: white; /* Réglage possible */
+}
+
+/* <span> qui enveloppe chaque numéro Optico (bordure verte) */
+div.optico > span {
+  border: 0px solid green;    /* Pour afficher la bordure passer à 1px */
+  display: inline-block;      /* Ne pas toucher */
+  padding-left:14px;          /* Réglage possible */
+  padding-top:0px !important; /* Réglage possible */
+  font-size:30px;             /* Réglage possible */
+  font-weight: bold;          /* Réglage possible */
+  height: 50px;               /* Réglage possible */
+  line-height: 50px;          /* Réglage possible */
+}
+
+/**
+ * Défini l'image cartouche
+ * Pour changer l'image cartouche, il suffit de la remplacer sur le serveur :
+ * Elle est située dans le dossier du plugin (cartouche.png)
+ */
+div.optico.cartouche {
+  background:url('/wp-content/plugins/optico/cartouche.png'); /* Ne pas toucher */
+}
+
+/* Mise en forme de la mention Optico ("Ce numéro n'est pas le numéro direct ...") - (bordure rouge) */
+p.mention-optico {
+  border: 0px solid red;    /* Pour afficher la bordure passer à 1px */
+  margin: 20px 0 20px 0px;  /* Réglage possible */
+  font-style: italic;       /* Réglage possible */
+}
+
+/**
+ * Mise en forme du bouton Optico avant de cliquer dessus (bouton bleu) pour ordi & mobile
+ * Réglage possible sur toutes les lignes CSS
+ */
+[id^="optico-phone-"] {
+  display: inline-block !important;
+  font-weight: bold;
+  font-size: 13px;
+  color: white;
+  background-color:#4080bc;
+  height: 40px;
+  line-height: 40px;
+  width:150px;
+  text-align: center;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  display: none;
+}
+
+
+/**
+ *
+ * Code CSS du cartouche la version mobile
+ *
+ */
+@media (max-width: 640px) {
+
+  /* <div> qui enveloppe chaque numéro Optico (bordure pointillée bleue sur mobile) */
+  div.optico {
+    border:0px dashed blue;   /* Pour afficher la bordure passer à 1px */
+    width: 248px;             /* Doit correspondre à la largeur de l'image cartouche-mobile.png */
+    height: 100px;            /* Doit correspondre à la largeur de l'image cartouche-mobile.png */
+  }
+
+  /* <span> qui enveloppe chaque numéro Optico (bordure pointillée verte sur mobile) */
+  div.optico > span {
+    border: 0px dashed green;     /* Pour afficher la bordure passer à 1px */
+    padding-left:23px !important; /* Réglage possible */
+    margin-top:-21px;             /* Réglage possible */
+    color: #931e71;               /* Réglage possible */
+    font-family: arial;           /* Réglage possible */
+  }
+
+  /**
+   * Défini l'image cartouche pour mobile
+   * Pour changer l'image cartouche, il suffit de la remplacer sur le serveur :
+   * Elle est située dans le dossier du plugin (cartouche-mobile.png)
+   */
+  div.optico.cartouche {
+    padding-top:13px;
+    background:url('/wp-content/plugins/optico/cartouche-pour-mobile.png') no-repeat; /* Ne pas toucher */
+  }
+}
+
+</style>
