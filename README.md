@@ -8,20 +8,20 @@ Le présent plugin a donc 2 fonctions :
 
 ## Personnalisation du plugin
 
-Le plugin est concu pour être souple et hautement personalisable.
+Le plugin est conçu pour être souple et hautement personnalisable.
 
 Il est possible :
 
 * D'insérer un code Optico personnalisé
 * De modifier la mention légale affichée sous les numéros
 * De changer l'image des numéros cartouches pour les versions desktop et mobile
-* De personaliser l'affichage via du code CSS
+* De personnaliser l'affichage via du code CSS
 
-### Insertion d'un code Optico personalisé
+### Insertion d'un code Optico personnalisé
 
 Le code fourni par Optico sera toujours sensiblement le même. Lors de l'activation du plugin, un code Optico par défaut sera activé. Ce code se trouve dans le fichier `code-optico.js` du plugin.
 
-Pour insérer un code personalisé, il suffit de remplacer le code par défaut du fichier `code-optico.js` par votre code. Il est nécessaire d'inclure les balises <script> et </script>.
+Pour insérer un code personnalisé, il suffit de remplacer le code par défaut du fichier `code-optico.js` par votre code. Il est nécessaire d'inclure les balises <script> et </script>.
 
 La nuance entre les différents codes Optico se fera sur l'attribut `pattern` (ligne 14) qui est une expression régulière représentant le format des numéros à remplacer (tous les numéros à 10 chiffres commençants par 03, 04, mais pas les 06 par exemple).
 
@@ -39,15 +39,13 @@ Il suffit de remplacer ces images pour changer le fond. Veillez à vider le cach
 
 Il est préférable de remplacer ces images par des images ayant les mêmes dimensions, si la taille des images diffère il faudra ajuster le code CSS (proprité `div.optico` dans le CSS).
 
-### Personalisation graphique via le CSS
+### Personnalisation graphique via le CSS
 
-Le fichier `mise-en-forme.css` contient le code CSS du plugin. Des commentaires permettent une prise en main facile de la feuille de style. Comme pour les images il faut veuiller à vides les caches lors des test.
+Le fichier `mise-en-forme.css` contient le code CSS du plugin. Des commentaires permettent une prise en main facile de la feuille de style. Comme pour les images il faut veuiller à vider les caches lors des tests.
 
-Chaque propriété CSS contient une bordure volontairement invisible définie par : `border: 0px solid`. Il ne faut pas hésiter à activer les bordures des zones (<div> et <span>) en passant la propriété à  `border: 1px solid`. Cela permet un positionnement plus précis sur la page. Chaque bordure est différentes, soit par la couleur soit par le style de trait, pour les versions desktop et mobile.
+Chaque propriété CSS contient une bordure volontairement invisible définie par : `border: 0px solid`. Il ne faut pas hésiter à activer les bordures des zones (**div** et **span**) en passant la propriété à  `border: 1px solid`. Cela permet un positionnement plus précis sur la page. Chaque bordure est différente, soit par la couleur soit par le style de trait, pour les versions desktop et mobile.
 
-La feuille de style contient beaucoup de commentaires pour faciliter sa prise en main.
-
-La feuille de style gère tous le desgin des numéros Optico, sauf la couleur du numéro surtaxé, celle-ci se configure dans le [backoffice Optico](https://www.optico.fr/settings.html).
+La feuille de style gère tout le desgin des numéros Optico, sauf la couleur du numéro surtaxé, celle-ci se configure dans le [backoffice Optico](https://www.optico.fr/settings.html).
 
 ### Remarques
 
