@@ -3,7 +3,7 @@
 /*
 Plugin Name: Optico
 Description: Gère l'affichage des numéros Optico
-Version:     1.0
+Version:     1.1
 Author:      Franck Dupont
 Author URI:  http://franck-dupont.me
 License:     GPL2
@@ -67,28 +67,35 @@ function optico_save_numero() {
   }
 }
 
-/*
 
-function opposition_optico($content) {
+// Gère l'affichage du numéro d'origine sur les pages du front
+add_action( 'the_content', 'optico_affiche_numero_origine' );
+function optico_affiche_numero_origine($content) {
 
-  if (get_post_type() == 'page' || get_post_type() == 'post') {
+  if ( is_admin() ) return $content;
+
+
+  if (get_post_type() != 'page' && get_post_type() != 'post') return $content;
 
   global $post;
 
-  $html  = <<<HTML
-<div class="optico-mention">
-  Ce numéro n'est pas le numéro direct du destinataire mais celui d'un service valable depuis la France métropole pour obtenir directement le numéro de téléphone de ce dernier.
-</div>
-HTML;
+  $numero_optico = trim(get_post_meta($post->ID,'numero_optico',true));
 
-return $html.$content;
-  }
+  // Vérification du format :
+  //  - numéros à 10 chiffres commençants par un 0
+  //  - numéros à 4 chiffres commençants par 39
+  preg_match('/([0]\d{9})|([3][9]\d{2})/', $numero_optico, $matches);
+  if (!isset($matches[0]))  return $content;
 
-  return $content;
+  $html  = '<p>';
+  $html .= ' <div class="optico">'.$numero_optico.'</div>';
+  $html .= '</p>';
+
+  return $html . $content;
 }
-add_action( 'the_content', 'opposition_optico' );
 
-*/
+
+
 
 
 
