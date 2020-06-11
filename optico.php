@@ -74,7 +74,6 @@ function optico_affiche_numero_origine($content) {
 
   if ( is_admin() ) return $content;
 
-
   if (get_post_type() != 'page' && get_post_type() != 'post') return $content;
 
   global $post;
@@ -87,15 +86,8 @@ function optico_affiche_numero_origine($content) {
   preg_match('/([0]\d{9})|([3][9]\d{2})/', $numero_optico, $matches);
   if (!isset($matches[0]))  return $content;
 
-  $mention = '';
-  $file_mention = __DIR__ . '/mention.txt';
-  if (is_file($file_mention)) {
-    $mention = file_get_contents($file_mention);
-  }
-
   $html  = '<p>';
-  $html .= ' <div class="optico">'.$numero_optico.'</div>';
-  $html .= '  <div style="margin-top:-10px;">'.$mention.'</div>';
+  $html .=    $numero_optico;
   $html .= '</p>';
 
   return $html . $content;
