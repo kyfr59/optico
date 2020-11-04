@@ -3,7 +3,7 @@
 /*
 Plugin Name: Optico
 Description: Gère l'affichage des numéros Optico
-Version:     1.1
+Version:     1.2
 Author:      Franck Dupont
 Author URI:  http://franck-dupont.me
 License:     GPL2
