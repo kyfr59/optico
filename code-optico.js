@@ -11,8 +11,7 @@
 
         // track only this kind of original phone numbers
         phoneMatching: {
-            pattern: /([0]\d{9})|([3][9]\d{2})/g,
-            //pattern:null,
+            pattern: __PATTERN__,
             ignoreDefaultPattern: true,
             length: null,
             minLength: null,
