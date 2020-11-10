@@ -119,7 +119,7 @@ function optico_affiche_numero_origine($content) {
   if (!isset($matches[0]))  return $content;
 
   $html  = '<p>';
-  $html .=    $numero_optico;
+  $html .= '<a href="'.$numero_optico.'">'.$numero_optico.'</a>';
   $html .= '</p>';
 
   return $html . $content;

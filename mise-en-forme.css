@@ -17,16 +17,18 @@ div.optico {
 }
 
 /* <span> qui enveloppe chaque numéro Optico (bordure verte) */
+div.optico > a,
 div.optico > span {
   border: 0px solid green;    /* Pour afficher la bordure passer à 1px */
   display: inline-block;      /* Ne pas toucher */
-  padding-left:14px;          /* Réglage possible */
+  padding-left:23px;          /* Réglage possible */
   padding-top:0px !important; /* Réglage possible */
-  font-size:30px;             /* Réglage possible */
+  font-size:28px;             /* Réglage possible */
   font-weight: bold;          /* Réglage possible */
   height: 50px;               /* Réglage possible */
   line-height: 50px;          /* Réglage possible */
 }
+
 
 /**
  * Défini l'image cartouche
@@ -70,7 +72,7 @@ p.mention-optico {
  * Code CSS du cartouche la version mobile
  *
  */
-@media (max-width: 640px) {
+@media (max-width: 991px) {
 
   /* <div> qui enveloppe chaque numéro Optico (bordure pointillée bleue sur mobile) */
   div.optico {
@@ -83,9 +85,14 @@ p.mention-optico {
   div.optico > span {
     border: 0px dashed green;     /* Pour afficher la bordure passer à 1px */
     padding-left:23px !important; /* Réglage possible */
-    margin-top:-21px;             /* Réglage possible */
+    margin-top:-10px;             /* Réglage possible */
     color: #931e71;               /* Réglage possible */
     font-family: arial;           /* Réglage possible */
+  }
+
+  div.optico > a {
+    margin-top: -15px !important;
+    margin-left: 8px !important;
   }
 
   /**
