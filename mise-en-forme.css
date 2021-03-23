@@ -1,5 +1,4 @@
 <style>
-
 /**
  *
  * Code CSS de la version desktop
@@ -11,6 +10,7 @@ div.optico {
   border: 0px solid blue; /* Pour afficher la bordure passer à 1px */
   height: 50px; /* Doit correspondre à la largeur de l'image cartouche.png */
   width: 415px; /* Doit correspondre à la hauteur de l'image cartouche.png */
+  width:initial;
   font-weight: bold; /* Réglage possible */
   font-size: 20px; /* Réglage possible */
   color: white; /* Réglage possible */
@@ -23,10 +23,14 @@ div.optico > span {
   display: inline-block;      /* Ne pas toucher */
   padding-left:23px;          /* Réglage possible */
   padding-top:0px !important; /* Réglage possible */
-  font-size:28px;             /* Réglage possible */
+  font-size:21px;             /* Réglage possible */
   font-weight: bold;          /* Réglage possible */
   height: 50px;               /* Réglage possible */
   line-height: 50px;          /* Réglage possible */
+}
+
+div.optico > a {
+  padding-left:13px;
 }
 
 
@@ -36,14 +40,14 @@ div.optico > span {
  * Elle est située dans le dossier du plugin (cartouche.png)
  */
 div.optico.cartouche {
-  background:url('/wp-content/plugins/optico/cartouche.png'); /* Ne pas toucher */
+  background: url(/wp-content/plugins/optico/cartouche.png) 70px no-repeat; /* Ne pas toucher */
 }
 
 /* Mise en forme de la mention Optico ("Ce numéro n'est pas le numéro direct ...") - (bordure rouge) */
 p.mention-optico {
   border: 0px solid red;    /* Pour afficher la bordure passer à 1px */
   margin: 20px 0 20px 0px;  /* Réglage possible */
-  font-style: italic;       /* Réglage possible */
+  font-style: normal;       /* Réglage possible */
 }
 
 /**
@@ -77,8 +81,8 @@ p.mention-optico {
   /* <div> qui enveloppe chaque numéro Optico (bordure pointillée bleue sur mobile) */
   div.optico {
     border:0px dashed blue;   /* Pour afficher la bordure passer à 1px */
-    width: 248px;             /* Doit correspondre à la largeur de l'image cartouche-mobile.png */
-    height: 100px;            /* Doit correspondre à la largeur de l'image cartouche-mobile.png */
+    width:415px;              /* Doit correspondre à la largeur de l'image cartouche-mobile.png */
+    height:50px;              /* Doit correspondre à la largeur de l'image cartouche-mobile.png */
   }
 
   /* <span> qui enveloppe chaque numéro Optico (bordure pointillée verte sur mobile) */
@@ -91,8 +95,10 @@ p.mention-optico {
   }
 
   div.optico > a {
-    margin-top: -15px !important;
-    margin-left: 8px !important;
+    margin-left: 0px !important;
+    margin-top: -12px !important; /* Avant : -15px */
+    margin-left: -5px !important; /* Avant : 8px */
+    padding-left:20px !important;
   }
 
   /**
@@ -101,9 +107,11 @@ p.mention-optico {
    * Elle est située dans le dossier du plugin (cartouche-mobile.png)
    */
   div.optico.cartouche {
-    padding-top:13px;
-    background:url('/wp-content/plugins/optico/cartouche-pour-mobile.png') no-repeat; /* Ne pas toucher */
+    width:150% !important;
+    background: url(/wp-content/plugins/optico/cartouche.png) 0px no-repeat; /* Ne pas toucher */
+    margin-top:25px;
   }
+
 }
 
 </style>
