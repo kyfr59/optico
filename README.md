@@ -1,5 +1,7 @@
 # Plugin Optico
 
+Example 
+
 Le plugin Optico gère l'affichage des numéros Optico dans Wordpress. Une fois activé, il remplace les numéros de téléphone de notre site par des numéros surtaxés et affiche une mention et un cartouche.
 
 Le présent plugin a donc 2 fonctions :
