@@ -1,3 +1,4 @@
 <p class="mention-optico">
   Ce numéro de téléphone n'est pas celui du destinataire mais celui d'un service valable depuis la France métropole pour obtenir directement le numéro de téléphone de ce dernier.
 </p>
+
