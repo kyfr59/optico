@@ -1,5 +1,7 @@
 <br /><br /><h1>Configuration du plugin Optico</h1>
 
+ss
+
 <?php
   if (is_array($_POST) && is_array($_POST['remplacements'])) {
     update_option( 'optico_remplacements', json_encode($_POST['remplacements']));
